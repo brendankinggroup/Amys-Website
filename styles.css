@@ -1,0 +1,271 @@
+/* ==========================================================
+   Pilates High — private apparatus training
+   Tokens first, components through tokens only.
+   ========================================================== */
+
+:root {
+  /* Ground: cool bone, like unbleached canvas upholstery.
+     Ink: near-black with a green cast, like a Cadillac frame.
+     Accent: eucalyptus grey-green, used once per screen. */
+  --bone:      #E9E7E1;
+  --bone-2:    #DFDCD4;
+  --ink:       #1B1E1B;
+  --ink-2:     #4A4F49;
+  --mute:      #7F837C;
+  --line:      #C9C6BD;
+  --accent:    #56675A;
+  --accent-ink:#E9E7E1;
+
+  /* Dark band (Investment) — the same palette, inverted by role. */
+  --band:      #1F2422;
+  --band-ink:  #E9E7E1;
+  --band-2:    #A9AEA6;
+  --band-line: #3A403C;
+  --band-accent: #9FB39F;
+
+  --bg:        var(--bone);
+  --fg:        var(--ink);
+  --fg-2:      var(--ink-2);
+
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --sans:    "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+
+  --measure: 62ch;
+  --rail: 11rem;
+  --gutter: clamp(1.25rem, 5vw, 5rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bone:   #161917;
+    --bone-2: #1F2320;
+    --ink:    #E6E4DD;
+    --ink-2:  #B5B8B0;
+    --mute:   #7F837C;
+    --line:   #333833;
+    --accent: #9FB39F;
+    --accent-ink: #161917;
+
+    --band:   #E6E4DD;
+    --band-ink: #161917;
+    --band-2: #4A4F49;
+    --band-line: #C9C6BD;
+    --band-accent: #56675A;
+  }
+}
+:root[data-theme="dark"] {
+  --bone:   #161917;
+  --bone-2: #1F2320;
+  --ink:    #E6E4DD;
+  --ink-2:  #B5B8B0;
+  --mute:   #7F837C;
+  --line:   #333833;
+  --accent: #9FB39F;
+  --accent-ink: #161917;
+
+  --band:   #E6E4DD;
+  --band-ink: #161917;
+  --band-2: #4A4F49;
+  --band-line: #C9C6BD;
+  --band-accent: #56675A;
+}
+
+/* ---------- Reset & base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; }
+h1 em, h2 em, .wordmark em { font-style: italic; font-weight: 400; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.skip {
+  position: absolute; left: -999px; top: 0;
+  background: var(--accent); color: var(--accent-ink); padding: .5rem 1rem;
+}
+.skip:focus { left: 1rem; top: 1rem; z-index: 100; }
+
+/* ---------- Labels ---------- */
+.eyebrow, .rail span, .rate-meta, .form-actions .fine, .creds, figcaption {
+  font-family: var(--sans);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 20;
+  display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 2rem;
+  padding: 1rem var(--gutter);
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.wordmark {
+  font-family: var(--display); font-size: 1.35rem; text-decoration: none; letter-spacing: .01em;
+}
+.nav nav { display: flex; gap: 1.75rem; }
+.nav nav a { text-decoration: none; font-size: .9rem; color: var(--fg-2); }
+.nav nav a:hover { color: var(--fg); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  font-family: var(--sans); font-size: .85rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+  padding: .95rem 1.6rem;
+  background: var(--fg); color: var(--bg);
+  text-decoration: none; border: 1px solid var(--fg); cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.btn:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn-small { padding: .6rem 1.1rem; font-size: .75rem; }
+.link-arrow { font-size: .95rem; text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.link-arrow::after { content: " \2193"; }
+.link-arrow:hover { border-color: var(--fg); }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: clamp(4rem, 10vw, 8rem) var(--gutter) clamp(3rem, 6vw, 5rem);
+  display: grid; gap: 1.75rem;
+  max-width: 78rem;
+}
+.hero h1 {
+  font-size: clamp(2.8rem, 7.5vw, 6.6rem);
+  line-height: .98; letter-spacing: -.015em;
+  max-width: 14ch;
+}
+.lede { font-size: clamp(1.1rem, 1.6vw, 1.35rem); color: var(--fg-2); max-width: 48ch; line-height: 1.5; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: .5rem; }
+
+.breath { margin: 2.5rem 0 0; width: 100%; }
+.breath canvas { display: block; width: 100%; height: auto; }
+.breath figcaption { display: flex; justify-content: space-between; margin-top: .4rem; }
+
+/* ---------- Sections: rail + content ---------- */
+.section {
+  display: grid;
+  grid-template-columns: var(--rail) minmax(0, 1fr);
+  gap: 2rem var(--gutter);
+  padding: clamp(3.5rem, 8vw, 7rem) var(--gutter);
+  border-top: 1px solid var(--line);
+}
+.rail { position: sticky; top: 5.5rem; align-self: start; }
+.rail span { display: block; padding-top: .6rem; border-top: 1px solid var(--fg); }
+.content { max-width: 52rem; display: grid; gap: 1.75rem; }
+.content h2 { font-size: clamp(1.9rem, 3.6vw, 3rem); line-height: 1.08; max-width: 20ch; }
+.prose { max-width: var(--measure); color: var(--fg-2); }
+.prose em { font-style: italic; color: var(--fg); }
+
+/* Definition list */
+.defs { margin: .5rem 0 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.defs > div { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 1.5rem; padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
+.defs dt { font-family: var(--display); font-size: 1.3rem; line-height: 1.25; }
+.defs dd { margin: 0; color: var(--fg-2); max-width: var(--measure); }
+
+/* Pull quote */
+.pull { margin: 1.5rem 0 0; padding-left: 1.5rem; border-left: 1px solid var(--accent); max-width: 40rem; }
+.pull p { font-family: var(--display); font-style: italic; font-size: clamp(1.3rem, 2.2vw, 1.7rem); line-height: 1.3; }
+.pull cite { display: block; margin-top: .75rem; font-style: normal; font-size: .85rem; color: var(--mute); }
+.pull .italic { font-style: italic; }
+
+/* Who it's for */
+.for-list { list-style: none; margin: .5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 2rem 3rem; }
+.for-list li { display: grid; gap: .5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.for-list h3 { font-size: 1.35rem; line-height: 1.2; }
+.for-list p { color: var(--fg-2); font-size: .98rem; }
+
+/* Apparatus table */
+.apparatus { border-collapse: collapse; width: 100%; margin-top: .5rem; }
+.apparatus th, .apparatus td { text-align: left; vertical-align: top; padding: 1.1rem 0; border-top: 1px solid var(--line); }
+.apparatus tr:last-child th, .apparatus tr:last-child td { border-bottom: 1px solid var(--line); }
+.apparatus th { font-family: var(--display); font-weight: 400; font-size: 1.35rem; width: 12rem; padding-right: 1.5rem; white-space: nowrap; }
+.apparatus td { color: var(--fg-2); }
+
+/* ---------- Investment (dark band) ---------- */
+.section-dark { background: var(--band); color: var(--band-ink); border-top: none; }
+.section-dark .rail span { border-top-color: var(--band-ink); color: var(--band-2); }
+.section-dark .prose { color: var(--band-2); }
+.section-dark .fine { color: var(--band-2); }
+
+/* 1px gap over the line colour draws every divider, whatever the column count. */
+.rates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--band-line); border: 1px solid var(--band-line); }
+.rate { padding: 1.75rem 1.5rem; background: var(--band); display: grid; align-content: start; gap: .6rem; }
+.rate h3 { font-size: 1.3rem; line-height: 1.2; }
+.rate-meta { color: var(--band-2); }
+.price {
+  font-family: var(--display); font-size: 2.9rem; line-height: 1; margin-top: .4rem;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.price .currency { font-size: 1.4rem; vertical-align: top; margin-right: .1rem; position: relative; top: .3rem; }
+.price .per { font-family: var(--sans); font-size: .85rem; color: var(--band-2); margin-left: .35rem; }
+.rate-note { font-size: .92rem; color: var(--band-2); }
+.rate-featured { background: color-mix(in srgb, var(--band-accent) 14%, var(--band)); }
+.rate-featured h3::after { content: " \2014 most chosen"; font-family: var(--sans); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--band-accent); }
+.fine { font-size: .85rem; color: var(--mute); max-width: var(--measure); }
+
+/* ---------- Amy ---------- */
+.content-amy { grid-template-columns: minmax(0, 16rem) minmax(0, 1fr); gap: 2.5rem; align-items: start; max-width: 60rem; }
+.content-amy > div { display: grid; gap: 1.25rem; }
+.portrait {
+  aspect-ratio: 4 / 5; background: var(--bone-2); border: 1px solid var(--line);
+  display: grid; place-items: end start; padding: 1rem;
+  font-family: var(--display); font-style: italic; font-size: 1.6rem; color: var(--mute);
+}
+.creds { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; text-transform: none; letter-spacing: 0; font-size: .92rem; color: var(--fg-2); }
+.creds li { padding-left: 1rem; position: relative; }
+.creds li::before { content: ""; position: absolute; left: 0; top: .7em; width: .35rem; height: 1px; background: var(--accent); }
+
+/* ---------- Form ---------- */
+.book-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2rem; max-width: 44rem; margin-top: .5rem; }
+.book-form label { display: grid; gap: .45rem; font-size: .85rem; color: var(--fg-2); }
+.book-form .wide { grid-column: 1 / -1; }
+.optional { color: var(--mute); font-size: .75rem; margin-left: .35rem; }
+.book-form input, .book-form textarea {
+  font: inherit; font-size: 1rem; color: var(--fg);
+  background: transparent; border: none; border-bottom: 1px solid var(--line);
+  padding: .55rem 0; border-radius: 0;
+}
+.book-form textarea { resize: vertical; border: 1px solid var(--line); padding: .75rem; }
+.book-form input:focus, .book-form textarea:focus { outline: none; border-color: var(--accent); }
+.book-form ::placeholder { color: var(--mute); }
+.form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; }
+.form-actions .fine { text-transform: none; letter-spacing: 0; }
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 2.5rem var(--gutter);
+  display: grid; gap: .5rem;
+  font-size: .85rem; color: var(--mute);
+}
+.footer .wordmark { color: var(--fg); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .nav { grid-template-columns: 1fr auto; }
+  .nav nav { display: none; }
+  .section { grid-template-columns: 1fr; gap: 1.25rem; }
+  .rail { position: static; }
+  .defs > div { grid-template-columns: 1fr; gap: .5rem; }
+  .apparatus th { width: auto; white-space: normal; display: block; padding-bottom: .25rem; border-top: 1px solid var(--line); }
+  .apparatus td { display: block; border-top: none; padding-top: 0; }
+  .apparatus tr:last-child th { border-bottom: none; }
+  .content-amy { grid-template-columns: 1fr; }
+  .portrait { max-width: 16rem; }
+  .book-form { grid-template-columns: 1fr; }
+  .rates { grid-template-columns: 1fr; }
+}
