@@ -1,0 +1,16 @@
+<svg class="art art-chair" viewBox="0 0 800 320" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Line drawing of a Pilates Combo Chair">
+  <!-- seat box -->
+  <path d="M300 120 H500 V290 H300 Z"/>
+  <path d="M300 136 H500"/>
+  <!-- pedal -->
+  <path d="M300 290 L228 254"/>
+  <path d="M228 254 L236 240"/>
+  <!-- pedal springs -->
+  <path d="M300 200 l-10 6 l-5 -4 l-8 10 l-8 -10 l-8 10 l-8 -10 l-8 10 l-5 -4 l-12 8"/>
+  <path d="M300 226 l-10 6 l-5 -4 l-8 10 l-8 -10 l-8 10 l-8 -10 l-8 10 l-5 -4 l-12 8"/>
+  <!-- handles -->
+  <path d="M320 120 V56 a6 6 0 0 1 12 0 V120 M468 120 V56 a6 6 0 0 1 12 0 V120"/>
+  <path d="M326 56 H474"/>
+  <!-- floor -->
+  <path d="M200 290 H600" stroke-dasharray="1 6"/>
+</svg>

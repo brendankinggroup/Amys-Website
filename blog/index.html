@@ -1,0 +1,23 @@
+---
+layout: default
+title: Journal
+permalink: /journal/
+description: Notes on Pilates, movement, and long-term health from Amy at Pilates High.
+---
+<section class="section section-first" id="journal">
+  <aside class="rail"><span>Journal</span></aside>
+  <div class="content">
+    <h2>Notes on movement and the long game.</h2>
+    <p class="prose">Short, practical pieces on Pilates, recovery, and the kind of health that compounds. Written between sessions, so they are as long as they need to be and no longer.</p>
+
+    <ul class="post-list">
+      {% for post in site.posts %}
+      <li>
+        <p class="eyebrow"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>{% if post.category %} &middot; {{ post.category }}{% endif %}</p>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 180 }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

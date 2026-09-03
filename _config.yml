@@ -1,0 +1,106 @@
+# Pilates High — site settings
+# Everything a non-developer should ever need to change lives in this file.
+
+title: Pilates High
+tagline: Private Pilates on Balanced Body apparatus
+description: Private, one-to-one Pilates on Balanced Body apparatus with Amy King in Las Vegas, in the studio or at your home. Classical foundation, contemporary practice, one client at a time.
+url: "https://brendankinggroup.github.io"   # change to https://pilateshigh.com once the domain is connected
+baseurl: ""        # set automatically by the deploy workflow; leave empty
+
+location: Las Vegas, Nevada
+email: amy@pilateshigh.com
+phone: (702) 555-0100
+phone_tel: "+17025550100"
+instagram: ""      # full URL, optional
+
+amy:
+  years: "[fifteen]"      # years teaching, spelled out. Confirm with Amy.
+  home_clients: "six"     # how many in-home clients Amy takes at once
+
+# In-home service area, written as it should read on the page.
+service_area: Summerlin, The Ridges, Henderson, MacDonald Highlands, Anthem, Southern Highlands, and Lake Las Vegas
+
+retreat:
+  season: Spring 2027
+  guests: eight
+  nights: four
+
+# Booking form. Leave formspree_id empty to fall back to a plain email link.
+# Formspree's free tier is 50 submissions a month, which is plenty for a private studio.
+formspree_id: ""
+
+# Stripe Payment Links.
+# In the Stripe dashboard: Products > add each option below > "Create payment link".
+# Paste each link here. No code, no server, no monthly fee.
+# While a link is empty the button reads "Book by email" and opens the email address above.
+stripe:
+  studio_assessment: ""
+  studio_single: ""
+  studio_series: ""
+  studio_monthly: ""
+  studio_duet: ""
+  home_assessment: ""
+  home_single: ""
+  home_series: ""
+  home_monthly: ""
+  home_duet: ""
+  gift: ""
+
+# The rate card. Each row has a studio price and an in-home price.
+# Prices are strings so you can write "1,250". "per" is optional.
+rates:
+  - key: assessment
+    name: Initial assessment
+    note: Required for new clients. Movement assessment, your first session, and a written programme to follow. At home, the extra time is spent on the room and equipment you will train with.
+    studio: { price: "175", meta: "90 minutes" }
+    home:   { price: "275", meta: "2 hours" }
+  - key: single
+    name: Single private session
+    note: Booked one at a time. Best for occasional visits or travel schedules.
+    studio: { price: "135", meta: "55 minutes" }
+    home:   { price: "195", meta: "55 minutes" }
+  - key: series
+    name: Series of ten
+    note: The ten sessions Joseph Pilates said it takes to feel the difference. Valid six months.
+    featured: true
+    studio: { price: "1,250", meta: "$125 per session" }
+    home:   { price: "1,850", meta: "$185 per session" }
+  - key: monthly
+    name: Monthly, twice weekly
+    note: Eight sessions a month in a standing slot that is held for you every week. Priority rescheduling.
+    per: /month
+    studio: { price: "960", meta: "$120 per session" }
+    home:   { price: "1,440", meta: "$180 per session" }
+  - key: duet
+    name: Duet
+    note: Two people, one instructor. For partners, friends, or a parent and adult child. Each person gets their own programme within the shared hour.
+    studio: { price: "190", meta: "$95 per person" }
+    home:   { price: "250", meta: "$125 per person" }
+
+# Photographs. Each may be a full URL or a path such as /assets/img/hero.jpg.
+# The two below are temporary Unsplash photographs (free to use, no attribution
+# required) chosen by title from search results. They have not been reviewed.
+# Replace them with Amy's own photography before launch. Leave one empty and the
+# site shows the line illustration instead.
+photos:
+  hero: "https://unsplash.com/photos/Lmt68LRP71s/download?w=1600"
+  band: "https://unsplash.com/photos/7UoAoaVVyRE/download?w=2000"
+  home: ""
+  retreat: ""
+  portrait: ""
+
+# Blog
+permalink: /journal/:year/:month/:title/
+excerpt_separator: <!--more-->
+
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

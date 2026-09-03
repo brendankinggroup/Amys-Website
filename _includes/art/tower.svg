@@ -1,0 +1,20 @@
+<svg class="art art-tower" viewBox="0 0 800 320" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Line drawing of a Pilates Trapeze Table">
+  <!-- table -->
+  <path d="M120 200 H600 V216 H120 Z"/>
+  <path d="M140 216 V290 M180 216 V290 M560 216 V290 M596 216 V290"/>
+  <!-- tower frame at foot end -->
+  <path d="M600 216 V40 M660 216 V40 M600 40 H660"/>
+  <path d="M660 216 V290 M600 216 V290"/>
+  <!-- push-through bar -->
+  <path d="M600 130 H660"/>
+  <path d="M630 130 V96 H540"/>
+  <!-- hanging springs from top -->
+  <path d="M614 40 v14 l-3 4 l6 8 l-6 8 l6 8 l-6 8 l6 8 l-6 8 l3 4 v10"/>
+  <path d="M646 40 v14 l-3 4 l6 8 l-6 8 l6 8 l-6 8 l6 8 l-6 8 l3 4 v10"/>
+  <!-- leg springs to bar -->
+  <path d="M600 160 h-12 l-4 -4 l-6 8 l-6 -8 l-6 8 l-6 -8 l-6 8 l-6 -8 l-4 4 h-12"/>
+  <!-- roll-down bar -->
+  <path d="M524 160 V186 H472"/>
+  <!-- mat on table -->
+  <path d="M140 200 H580" stroke-dasharray="1 5"/>
+</svg>

@@ -1,0 +1,366 @@
+---
+layout: default
+body_class: home
+---
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Private Pilates &middot; {{ site.location }}</p>
+    <h1>Strength, <em>quietly</em> built.</h1>
+    <p class="lede">One-to-one Pilates on Balanced Body apparatus, in a private studio or at your home, with an instructor who has spent {{ site.amy.years }} years learning exactly where a body holds back.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#book">Request a consultation</a>
+      <a class="link-arrow" href="#practice">How a session works</a>
+    </div>
+    <figure class="breath" aria-label="A line that slowly expands and contracts at the pace of a Pilates breath: four seconds in, six seconds out.">
+      <canvas id="breath-line" width="1200" height="120"></canvas>
+      <figcaption><span>Inhale, four</span><span>Exhale, six</span></figcaption>
+    </figure>
+  </div>
+  <figure class="photo photo-hero" data-light="right">
+    {% if site.photos.hero != "" %}<img src="{{ site.photos.hero }}" alt="A client on the Reformer, carriage extended, in soft window light." onerror="this.remove()">{% endif %}
+    {% include art/reformer.svg %}
+    <figcaption>Balanced Body Reformer. Springs set for one person.</figcaption>
+  </figure>
+</section>
+
+<!-- ============ BAND: CONTEMPORARY ============ -->
+<section class="band" data-light="left">
+  {% if site.photos.band != "" %}<img src="{{ site.photos.band }}" alt="An empty studio, apparatus in a row, morning light across the floor." onerror="this.remove()">{% endif %}
+  {% include art/tower.svg %}
+  <div class="band-text">
+    <p class="eyebrow">The method</p>
+    <h2>Classical foundation. <em>Contemporary</em> practice.</h2>
+    <p>Amy trained in the classical repertoire in New York and learned the athletic West Coast approach in Las Vegas. Pilates High is the place where the two meet: precise, progressive, and never gentle for the sake of it.</p>
+  </div>
+</section>
+
+<!-- ============ THE PRACTICE ============ -->
+<section class="section" id="practice">
+  <aside class="rail"><span>The practice</span></aside>
+  <div class="content">
+    <h2>Fifty-five minutes. One client. Full apparatus.</h2>
+    <p class="prose">Group classes teach the exercise. Private training teaches <em>you</em> the exercise: the hip that sits a little higher, the shoulder that wants to do the work your abdominals should be doing, the breath you hold on the way down. That is what the hour is for.</p>
+
+    <dl class="defs">
+      <div>
+        <dt>An assessment before anything else</dt>
+        <dd>The first visit is ninety minutes. Posture, gait, range of motion, and a conversation about what your body needs to do on a Tuesday afternoon. The programme comes from that, not from a template.</dd>
+      </div>
+      <div>
+        <dt>Written, then rewritten</dt>
+        <dd>You leave every session with a record of what we did and what changed. The next session starts from there. Nothing is repeated because it is convenient.</dd>
+      </div>
+      <div>
+        <dt>Traditional to hybrid, by design</dt>
+        <dd>Some bodies need the slow, classical order. Some need spring-loaded athletic work that leaves you shaking. Most need both, in a ratio that shifts as you get stronger. Amy writes that ratio into every programme.</dd>
+      </div>
+    </dl>
+
+    <blockquote class="pull">
+      <p>&ldquo;In ten sessions you will feel the difference. In twenty you will see the difference. In thirty you will have a whole new body.&rdquo;</p>
+      <cite>Joseph Pilates, <span class="italic">Return to Life Through Contrology</span>, 1945</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ WHO IT'S FOR ============ -->
+<section class="section" id="for">
+  <aside class="rail"><span>Who it's for</span></aside>
+  <div class="content">
+    <h2>Bodies with a specific job to do.</h2>
+    <p class="prose">Private training is the right fit when general fitness is not the goal. Most clients arrive with one of these.</p>
+
+    <ul class="for-list">
+      <li>
+        <h3>Rebuilding after injury or surgery</h3>
+        <p>Post-rehab work that picks up where physical therapy discharges you, with spinal, hip, and shoulder protocols written in coordination with your clinician.</p>
+      </li>
+      <li>
+        <h3>Rotational sport</h3>
+        <p>Golf, tennis, and pickleball ask the spine to rotate under load. We train the rotation to come from the right place, so power goes up and the low back stays quiet.</p>
+      </li>
+      <li>
+        <h3>Pre- and postnatal</h3>
+        <p>Pelvic floor, deep abdominal reconnection, and load management through each trimester and the year after.</p>
+      </li>
+      <li>
+        <h3>Strength and bone after fifty</h3>
+        <p>Progressive spring resistance for bone density, balance, and the hip and spinal extension that keeps you upright in your eighties.</p>
+      </li>
+      <li>
+        <h3>Hypermobility and scoliosis</h3>
+        <p>Bodies that need stability more than stretch. Spring-loaded work that teaches the joints where to stop, and asymmetric programming that meets the curve where it is.</p>
+      </li>
+      <li>
+        <h3>The desk-bound spine</h3>
+        <p>Long hours seated shorten the front of the body and switch off the back. We reverse it, one session at a time, with homework that takes six minutes.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ APPARATUS ============ -->
+<section class="section" id="apparatus">
+  <aside class="rail"><span>The apparatus</span></aside>
+  <div class="content content-wide">
+    <h2>Balanced Body, the full studio, all of it yours for the hour.</h2>
+    <p class="prose">Balanced Body builds the apparatus most serious studios choose: maple frames, precise spring gauges, and the small adjustments that let a session be tuned to one person. There is no waiting for a machine here. There is one client, and every piece is set for them.</p>
+
+    <div class="art-strip">
+      <figure class="art-tile" data-light="left">{% include art/reformer.svg %}<figcaption>Reformer with Tower</figcaption></figure>
+      <figure class="art-tile" data-light="right">{% include art/tower.svg %}<figcaption>Trapeze Table</figcaption></figure>
+      <figure class="art-tile" data-light="left">{% include art/chair.svg %}<figcaption>Combo Chair</figcaption></figure>
+    </div>
+
+    <table class="apparatus">
+      <tbody>
+        <tr><th scope="row">Reformer with Tower</th><td>The sliding carriage and spring system that teaches control through resistance and instability. The Tower adds the roll-down bar, push-through bar, and leg springs, so most of the repertoire lives here.</td></tr>
+        <tr><th scope="row">Trapeze Table</th><td>Springs from above and below for assisted spinal articulation, hanging work, and the exercises that are too demanding for the mat.</td></tr>
+        <tr><th scope="row">Combo Chair</th><td>A split pedal on springs. Unforgiving, precise, and the fastest route to functional leg, hip, and standing strength.</td></tr>
+        <tr><th scope="row">Ladder Barrel</th><td>Spinal extension, hip flexor length, and the stretching most bodies have been avoiding for years.</td></tr>
+        <tr><th scope="row">Arc and Spine Corrector</th><td>Curved supports that restore the natural curves of the spine and open the chest, one vertebra at a time.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ AT YOUR HOME ============ -->
+<section class="section" id="home">
+  <aside class="rail"><span>At your home</span></aside>
+  <div class="content content-home">
+    <div class="content-home-text">
+      <h2>The studio comes to you.</h2>
+      <p class="prose">Some clients would rather not drive across the valley for the hour that is supposed to slow their day down. For them, Amy brings the session to the house: the same assessment, the same written programme, the same attention, in a room you already own.</p>
+      <p class="prose">In-home places are limited to {{ site.amy.home_clients }} clients at a time, so every standing appointment is kept. Sessions carry a premium for travel and for the longer first visit.</p>
+    </div>
+    <figure class="photo photo-home" data-light="right">
+      {% if site.photos.home != "" %}<img src="{{ site.photos.home }}" alt="A mat, a Magic Circle, and weighted balls laid out on a wooden floor in a private home." onerror="this.remove()">{% endif %}
+      {% include art/props.svg %}
+      <figcaption>The travelling kit</figcaption>
+    </figure>
+    <dl class="defs defs-home">
+      <div>
+        <dt>What Amy brings</dt>
+        <dd>A studio mat and the full Balanced Body prop set: Magic Circle, weighted balls, resistance bands, foam roller, and the small tools that turn a mat into an apparatus. Nothing is left behind and nothing needs storing.</dd>
+      </div>
+      <div>
+        <dt>If you own a Reformer, or want to</dt>
+        <dd>Amy teaches the full repertoire on your own machine. If you are considering one, she will help you choose, specify, and order the right Balanced Body Reformer for the room, then set it up with you on the first visit. Most homes are best served by the Allegro 2 with Tower.</dd>
+      </div>
+      <div>
+        <dt>Where she travels</dt>
+        <dd>{{ site.service_area }}. Beyond that, ask. A second household in the same visit, for a partner or a guest, is booked as a duet.</dd>
+      </div>
+    </dl>
+    <a class="link-arrow link-arrow-right" href="#investment">In-home rates</a>
+  </div>
+</section>
+
+<!-- ============ RETREATS ============ -->
+<section class="band band-retreat" id="retreats" data-light="left">
+  {% if site.photos.retreat != "" %}<img src="{{ site.photos.retreat }}" alt="A private house in the desert, a Reformer set up by an open door, early light." onerror="this.remove()">{% endif %}
+  {% include art/tower.svg %}
+  <div class="band-text band-text-retreat">
+    <p class="eyebrow">Coming soon &middot; {{ site.retreat.season }}</p>
+    <h2>Pilates High <em>Retreats</em></h2>
+    <p>{{ site.retreat.nights | capitalize }} nights. {{ site.retreat.guests | capitalize }} guests at most. A private house within a few hours of Las Vegas, chosen for quiet and light. Two apparatus sessions a day taught as duets, a sunrise mat class, breathwork, one form of bodywork every afternoon, and a chef whose only job that week is to feed you well.</p>
+    <p>No merchandise, no ambassadors, nobody filming. Dates, the house, and the bodywork are being decided with the people on the waitlist, who will hear first.</p>
+    {% if site.formspree_id != "" %}
+    <form class="waitlist" action="https://formspree.io/f/{{ site.formspree_id }}" method="post">
+      <input type="hidden" name="_subject" value="Retreat waitlist">
+    {% else %}
+    <form class="waitlist" action="mailto:{{ site.email }}?subject=Retreat%20waitlist" method="post" enctype="text/plain">
+    {% endif %}
+      <label><span>Name</span><input type="text" name="name" autocomplete="name" required></label>
+      <label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+      <button class="btn" type="submit">Join the waitlist</button>
+    </form>
+    <p class="fine">Private retreats, for a family or a group of friends at your home or a house of your choosing, are available now by request. <a href="#book">Ask Amy</a>.</p>
+  </div>
+</section>
+
+<!-- ============ INVESTMENT ============ -->
+<section class="section section-dark" id="investment">
+  <aside class="rail"><span>Investment</span></aside>
+  <div class="content content-wide">
+    <h2>Straightforward rates. No memberships, no contracts.</h2>
+    <p class="prose">Every option is a private session on the full Balanced Body apparatus, in the studio or at your home. The series and monthly options exist because consistency is where the results are.</p>
+
+    {%- comment -%} Rates and Stripe links live in _config.yml. {%- endcomment -%}
+    <div class="ratecard-wrap">
+    <table class="ratecard">
+      <thead>
+        <tr>
+          <th scope="col"><span class="visually-hidden">Option</span></th>
+          <th scope="col">In the studio</th>
+          <th scope="col">At your home</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for rate in site.rates %}
+        {% assign sk = "studio_" | append: rate.key %}{% assign hk = "home_" | append: rate.key %}
+        {% assign slink = site.stripe[sk] %}{% assign hlink = site.stripe[hk] %}
+        <tr{% if rate.featured %} class="featured"{% endif %}>
+          <th scope="row">
+            <span class="rate-name">{{ rate.name }}{% if rate.featured %} <span class="rate-flag">Most chosen</span>{% endif %}</span>
+            <span class="rate-note">{{ rate.note }}</span>
+          </th>
+          <td data-label="In the studio">
+            <span class="price"><span class="currency">$</span>{{ rate.studio.price }}{% if rate.per %}<span class="per">{{ rate.per }}</span>{% endif %}</span>
+            <span class="rate-meta">{{ rate.studio.meta }}</span>
+            {% if slink and slink != "" %}<a class="rate-buy" href="{{ slink }}">Purchase</a>{% else %}<a class="rate-buy" href="mailto:{{ site.email }}?subject={{ rate.name | uri_escape }}%20(studio)">Book by email</a>{% endif %}
+          </td>
+          <td data-label="At your home">
+            <span class="price"><span class="currency">$</span>{{ rate.home.price }}{% if rate.per %}<span class="per">{{ rate.per }}</span>{% endif %}</span>
+            <span class="rate-meta">{{ rate.home.meta }}</span>
+            {% if hlink and hlink != "" %}<a class="rate-buy" href="{{ hlink }}">Purchase</a>{% else %}<a class="rate-buy" href="mailto:{{ site.email }}?subject={{ rate.name | uri_escape }}%20(at%20home)">Book by email</a>{% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+
+    <p class="fine">Twenty-four hours' notice to reschedule a private, forty-eight for a duet. Sessions cancelled inside that window are charged in full. {% if site.stripe.gift != "" %}<a href="{{ site.stripe.gift }}">Gift certificates</a>{% else %}Gift certificates{% endif %} are available for any option above and arrive as a printed card or by email. Payment is handled securely by Stripe. Nothing is stored on this site.</p>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIAL ============ -->
+<section class="testimonial">
+  <blockquote>
+    <p>&ldquo;Amy knows her stuff, so you're not just doing some crazy version of Pilates from someone who was kinda certified.&rdquo;</p>
+    <cite>A Sculpt + Sweat client, Las Vegas</cite>
+  </blockquote>
+</section>
+
+<!-- ============ AMY ============ -->
+<section class="section" id="amy">
+  <aside class="rail"><span>Your instructor</span></aside>
+  <div class="content content-amy">
+    <figure class="photo photo-portrait" data-light="left">
+      {% if site.photos.portrait != "" %}<img src="{{ site.photos.portrait }}" alt="Amy King, standing beside the Reformer." onerror="this.remove()">{% endif %}
+      <span class="photo-label">Amy</span>
+    </figure>
+    <div>
+      <h2>Amy King</h2>
+      <p class="prose">Amy trained and certified in Pilates in New York City, in the classical tradition, where precision comes before everything. When she moved to Las Vegas with her family she found a faster, more athletic approach to the work, and rather than choose between the two, she built a studio on the blend.</p>
+      <p class="prose">That studio was Sculpt + Sweat on West Tropicana, which she founded and ran for [years]. Clients came for a modern take on the classical exercises, from traditional repertoire to a hybrid, spring-loaded style built for results. Pilates High is what came next: the same method, taught one client at a time, with the full attention a private session makes possible.</p>
+      <ul class="creds">
+        <li>Comprehensive Pilates certification, New York City [programme to confirm]</li>
+        <li>Founder and former owner, Sculpt + Sweat, Las Vegas</li>
+        <li>{{ site.amy.years }} years teaching mat and apparatus, classical and contemporary</li>
+        <li>[Post-rehabilitation or other specialisations to confirm]</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUESTIONS ============ -->
+<section class="section" id="questions">
+  <aside class="rail"><span>Questions</span></aside>
+  <div class="content">
+    <h2>The things people ask before they book.</h2>
+    <div class="faq">
+      <details>
+        <summary>Do I need to have done Pilates before?</summary>
+        <p>No. Most clients arrive with no experience, or with group classes that taught them the names of exercises but not how their own body should do them. The assessment meets you exactly where you are.</p>
+      </details>
+      <details>
+        <summary>What should I wear?</summary>
+        <p>Fitted clothing you can move in, so Amy can see the shape of your spine and hips: leggings or shorts and a close top. Grip socks or bare feet on the apparatus. No shoes in the studio.</p>
+      </details>
+      <details>
+        <summary>How often should I come?</summary>
+        <p>Twice a week for the first two months is where results arrive fastest, which is why the monthly option exists. Once a week maintains. Less than that and each session spends its first fifteen minutes catching up.</p>
+      </details>
+      <details>
+        <summary>Where is the studio?</summary>
+        <p>A private, single-client studio in {{ site.location | split: "," | first }}, by appointment only. There is no lobby, no front desk, and no one waiting for the next slot. The address and parking details are shared when you book.</p>
+      </details>
+      <details>
+        <summary>Can you work with my physical therapist or surgeon?</summary>
+        <p>Yes, and Amy prefers to. Bring your discharge notes or clearance to the assessment. She will write the programme within your clinician's guidelines and share it with them if you would like her to.</p>
+      </details>
+      <details>
+        <summary>What is the difference between the studio and in-home sessions?</summary>
+        <p>The instruction is identical. In the studio you have the full apparatus: Reformer with Tower, Trapeze Table, Combo Chair, Ladder Barrel, and Arc. At home you have a mat and the full prop kit, plus your own Reformer if you have one. Most in-home clients own a Reformer within a year.</p>
+      </details>
+      <details>
+        <summary>What is your cancellation policy?</summary>
+        <p>Twenty-four hours' notice to reschedule a private session, forty-eight hours for a duet. Inside that window the session is charged in full. Standing monthly clients may reschedule within the same week at no charge with notice.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNAL ============ -->
+<section class="section" id="journal">
+  <aside class="rail"><span>Journal</span></aside>
+  <div class="content">
+    <h2>Notes on movement and the long game.</h2>
+    <ul class="post-list post-list-compact">
+      {% for post in site.posts limit: 3 %}
+      <li>
+        <p class="eyebrow"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>{% if post.category %} &middot; {{ post.category }}{% endif %}</p>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 160 }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <a class="link-arrow link-arrow-right" href="{{ '/journal/' | relative_url }}">All journal entries</a>
+  </div>
+</section>
+
+<!-- ============ BOOK ============ -->
+<section class="section" id="book">
+  <aside class="rail"><span>Begin</span></aside>
+  <div class="content">
+    <h2>Request a consultation.</h2>
+    <p class="prose">Tell Amy a little about what brings you. She replies personally, usually within one business day, to arrange your initial assessment.</p>
+
+    {% if site.formspree_id != "" %}
+    <form class="book-form" action="https://formspree.io/f/{{ site.formspree_id }}" method="post">
+    {% else %}
+    <form class="book-form" action="mailto:{{ site.email }}" method="post" enctype="text/plain">
+    {% endif %}
+      <label>
+        <span>Your name</span>
+        <input type="text" name="name" autocomplete="name" required>
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" autocomplete="email" required>
+      </label>
+      <label>
+        <span>Phone <span class="optional">optional</span></span>
+        <input type="tel" name="phone" autocomplete="tel">
+      </label>
+      <label>
+        <span>Where would you like to train?</span>
+        <select name="where">
+          <option value="studio">In the studio</option>
+          <option value="home">At my home</option>
+          <option value="either">Either</option>
+        </select>
+      </label>
+      <label>
+        <span>Best time of day</span>
+        <select name="time">
+          <option value="morning">Morning</option>
+          <option value="midday">Midday</option>
+          <option value="afternoon">Afternoon</option>
+          <option value="evening">Evening</option>
+        </select>
+      </label>
+      <label class="wide">
+        <span>What brings you to private training?</span>
+        <textarea name="message" rows="5" placeholder="An injury, a sport, a goal, or simply a body you would like to know better."></textarea>
+      </label>
+      <div class="form-actions wide">
+        <button class="btn" type="submit">Send request</button>
+        <p class="fine">Or call <a href="tel:{{ site.phone_tel }}">{{ site.phone }}</a>. Studio address is shared on booking.</p>
+      </div>
+    </form>
+  </div>
+</section>
