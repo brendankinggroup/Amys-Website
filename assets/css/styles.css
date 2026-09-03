@@ -105,7 +105,7 @@ img { max-width: 100%; display: block; }
 .skip:focus { left: 1rem; top: 1rem; z-index: 100; }
 
 /* ---------- Labels ---------- */
-.eyebrow, .rail span, .rate-meta, .form-actions .fine, figcaption, .photo-label {
+.eyebrow, .rail span, .rate-meta, .form-actions .fine, figcaption, .photo-label, .waitlist label span {
   font-family: var(--sans);
   font-size: .7rem;
   letter-spacing: .16em;
@@ -241,16 +241,25 @@ img { max-width: 100%; display: block; }
   .section-dark { padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter))); padding-right: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter))); }
 }
 
-.rates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--band-line); border: 1px solid var(--band-line); }
-.rate { padding: 1.9rem 1.6rem; background: var(--band); display: grid; align-content: start; gap: .6rem; }
-.rate h3 { font-size: 1.35rem; line-height: 1.2; }
-.rate-meta { color: var(--band-2); }
-.price { font-family: var(--display); font-size: 3rem; line-height: 1; margin-top: .4rem; font-variant-numeric: tabular-nums lining-nums; }
-.price .currency { font-size: 1.4rem; vertical-align: top; margin-right: .1rem; position: relative; top: .3rem; }
-.price .per { font-family: var(--sans); font-size: .85rem; color: var(--band-2); margin-left: .35rem; }
-.rate-note { font-size: .92rem; color: var(--band-2); }
-.rate-featured { background: color-mix(in srgb, var(--band-accent) 14%, var(--band)); }
-.rate-featured h3::after { content: " \2014 most chosen"; font-family: var(--sans); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--band-accent); }
+.ratecard-wrap { overflow-x: auto; }
+.ratecard { border-collapse: collapse; width: 100%; min-width: 40rem; }
+.ratecard thead th { text-align: left; padding: 0 1.25rem .9rem; font-family: var(--sans); font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 500; color: var(--band-2); border-bottom: 1px solid var(--band-ink); }
+.ratecard thead th:first-child { padding-left: 0; }
+.ratecard tbody th, .ratecard tbody td { vertical-align: top; padding: 1.5rem 1.25rem; border-bottom: 1px solid var(--band-line); text-align: left; }
+.ratecard tbody th { padding-left: 0; font-weight: 400; width: 40%; }
+.ratecard tbody td { width: 30%; }
+.ratecard tbody tr.featured { background: color-mix(in srgb, var(--band-accent) 10%, transparent); }
+.ratecard tbody tr.featured th { padding-left: 1rem; border-left: 2px solid var(--band-accent); }
+.rate-name { display: block; font-family: var(--display); font-size: 1.4rem; line-height: 1.2; }
+.rate-flag { display: inline-block; margin-left: .5rem; vertical-align: middle; font-family: var(--sans); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--band-accent); }
+.rate-note { display: block; margin-top: .45rem; font-size: .9rem; color: var(--band-2); max-width: 36ch; }
+.rate-meta { display: block; margin-top: .35rem; }
+.rate-buy { display: inline-block; margin-top: .75rem; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--band-line); padding-bottom: 2px; }
+.rate-buy:hover { border-color: var(--band-ink); }
+.price { display: block; font-family: var(--display); font-size: 2.6rem; line-height: 1; font-variant-numeric: tabular-nums lining-nums; }
+.price .currency { font-size: 1.3rem; vertical-align: top; margin-right: .1rem; position: relative; top: .3rem; }
+.price .per { font-family: var(--sans); font-size: .8rem; color: var(--band-2); margin-left: .35rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .fine { font-size: .85rem; color: var(--mute); max-width: var(--measure); }
 
 /* ---------- Testimonial ---------- */
@@ -321,6 +330,44 @@ img { max-width: 100%; display: block; }
 .shots p { color: var(--fg-2); font-size: .95rem; }
 .shots a { font-size: .85rem; }
 
+
+/* ---------- At your home ---------- */
+.content-home { max-width: none; grid-template-columns: minmax(0, 1fr) minmax(0, 19rem); grid-template-areas: "text photo" "defs photo" "link photo"; gap: 1.9rem clamp(2rem, 5vw, 5rem); align-items: start; }
+.content-home-text { grid-area: text; display: grid; gap: 1.25rem; }
+.content-home .photo-home { grid-area: photo; aspect-ratio: 4 / 5; margin: 0; align-self: start; }
+.content-home .defs-home { grid-area: defs; max-width: 54rem; }
+.defs-home > div { grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); }
+.content-home > .link-arrow { grid-area: link; justify-self: start; }
+.photo-home .art { width: 110%; left: -5%; top: 30%; }
+
+/* ---------- Retreats band ---------- */
+.band-retreat { border-top: none; align-items: center; min-height: clamp(26rem, 52vw, 42rem); }
+.band-retreat .art { width: 54%; right: 3%; top: 8%; opacity: .55; }
+.band-text-retreat { gap: 1.1rem; max-width: var(--max); }
+.band-text-retreat h2 { max-width: 12ch; }
+.band-text-retreat p:not(.eyebrow) { max-width: 56ch; }
+.band-text-retreat .fine { color: var(--ink-2); }
+.band-text-retreat .fine a { color: var(--ink); }
+.waitlist { display: grid; grid-template-columns: minmax(0, 14rem) minmax(0, 18rem) auto; gap: 1rem 1.5rem; align-items: end; margin-top: .75rem; max-width: 48rem; }
+.waitlist label { display: grid; gap: .4rem; }
+.waitlist input { font: inherit; font-size: 1rem; color: var(--ink); background: transparent; border: none; border-bottom: 1px solid var(--ink-2); padding: .55rem 0; border-radius: 0; }
+.waitlist input:focus { outline: none; border-color: var(--accent); }
+.waitlist .btn { align-self: end; }
+
+/* ---------- Questions ---------- */
+.faq { display: grid; border-top: 1px solid var(--line); max-width: 44rem; }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: baseline; gap: 1.5rem; padding: 1.1rem 0; font-family: var(--display); font-size: 1.3rem; line-height: 1.25; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--sans); font-size: 1.2rem; color: var(--mute); flex: none; transition: transform .25s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { padding: 0 0 1.25rem; color: var(--fg-2); max-width: var(--measure); }
+@media (prefers-reduced-motion: reduce) { .faq summary::after { transition: none; } }
+
+.book-form select { font: inherit; font-size: 1rem; color: var(--fg); background: transparent; border: none; border-bottom: 1px solid var(--line); padding: .55rem 0; border-radius: 0; appearance: none; -webkit-appearance: none; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%); background-position: calc(100% - 12px) 55%, calc(100% - 7px) 55%; background-size: 5px 5px; background-repeat: no-repeat; }
+.book-form select:focus { outline: none; border-color: var(--accent); }
+.book-form option { color: initial; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) { .nav nav { gap: 1.2rem; } }
 @media (max-width: 860px) {
@@ -338,8 +385,22 @@ img { max-width: 100%; display: block; }
   .apparatus td { display: block; border-top: none; padding-top: 0; }
   .apparatus tr:last-child th { border-bottom: none; }
   .content-amy { grid-template-columns: 1fr; }
+  .content-home { grid-template-columns: 1fr; grid-template-areas: "text" "photo" "defs" "link"; }
+  .content-home .photo-home { max-width: 22rem; aspect-ratio: 4 / 3; }
+  .waitlist { grid-template-columns: 1fr; }
+  .band-retreat .art { width: 90%; opacity: .35; }
+  .ratecard { min-width: 0; }
+  .ratecard thead { display: none; }
+  .ratecard tbody tr, .ratecard tbody th, .ratecard tbody td { display: block; width: auto; }
+  .ratecard tbody tr { padding: 1.25rem 0; border-bottom: 1px solid var(--band-line); }
+  .ratecard tbody tr.featured th { padding-left: 1rem; }
+  .ratecard tbody th, .ratecard tbody td { padding: .5rem 0; border-bottom: none; }
+  .ratecard tbody td { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "label label" "price meta" "buy buy"; align-items: baseline; gap: .1rem 1rem; }
+  .ratecard tbody td::before { content: attr(data-label); grid-area: label; font-family: var(--sans); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--band-2); }
+  .ratecard tbody td .price { grid-area: price; font-size: 2rem; }
+  .ratecard tbody td .rate-meta { grid-area: meta; margin: 0; }
+  .ratecard tbody td .rate-buy { grid-area: buy; margin-top: .4rem; }
   .photo-portrait { max-width: 18rem; }
   .book-form { grid-template-columns: 1fr; }
-  .rates { grid-template-columns: 1fr; }
   .shots li { grid-template-columns: 1fr; gap: .4rem; }
 }

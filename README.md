@@ -15,7 +15,7 @@ Built as a [Jekyll](https://jekyllrb.com) site so it hosts for free on GitHub Pa
 
 ## Where everything lives
 
-- `_config.yml` — every fact a non-developer should change: contact details, location, the four rates, Stripe links, Formspree id.
+- `_config.yml` — every fact a non-developer should change: contact details, location, the rate card (studio and in-home prices), the in-home service area, retreat season, Stripe links, Formspree id.
 - `index.html` — the home page. The Investment section is generated from `_config.yml`.
 - `_posts/` — journal entries, one Markdown file each. See below.
 - `_layouts/` — the page shell (`default.html`) and the journal entry template (`post.html`).
@@ -35,12 +35,16 @@ Built as a [Jekyll](https://jekyllrb.com) site so it hosts for free on GitHub Pa
 Payment Links are hosted checkout pages Stripe runs for you. There is no code to write and no server to run.
 
 1. Create a Stripe account at stripe.com and complete the business verification.
-2. In the dashboard go to **Product catalogue > Add product** and create one product per option: Initial assessment, Single private session, Series of ten, Monthly (set the monthly one as a recurring price if you want it to bill automatically).
+2. In the dashboard go to **Product catalogue > Add product** and create one product per cell of the rate card: each option (Initial assessment, Single session, Series of ten, Monthly, Duet) in a studio version and an at-home version. Ten products in all. Set the monthly ones as recurring prices if you want them to bill automatically.
 3. For each product click **Create payment link**. Under advanced options you can collect the customer's phone number and add a note such as "Amy will contact you to schedule".
-4. Copy each link into the matching field under `stripe:` in `_config.yml`. Add one for gift certificates too if you want them.
+4. Copy each link into the matching field under `stripe:` in `_config.yml` (`studio_single`, `home_series`, and so on). Add one for gift certificates too if you want them.
 5. Commit and push. The Purchase buttons go live.
 
-Until a link is filled in, that button reads "Book by email" instead, so the site is never broken while you set things up.
+Until a link is filled in, that cell reads "Book by email" instead, so the site is never broken while you set things up.
+
+## The retreat waitlist
+
+The Retreats section collects names and emails. With a Formspree id set, submissions arrive with the subject "Retreat waitlist". Without one, the form opens an email. When dates are fixed, change `retreat:` in `_config.yml` and edit the copy in the Retreats section of `index.html`.
 
 Stripe also emails receipts and lets you issue refunds from the dashboard. If you later want sessions tracked and booked automatically, a scheduling tool such as Acuity or Calendly can replace the Purchase buttons; the links live in the same config file.
 
