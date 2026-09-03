@@ -25,10 +25,9 @@ Built as a [Jekyll](https://jekyllrb.com) site so it hosts for free on GitHub Pa
 
 ## Publishing on GitHub Pages
 
-1. Merge this branch into `main`.
-2. In the repository settings, open **Pages** and set the source to **Deploy from a branch**, branch `main`, folder `/ (root)`.
-3. The site appears at `https://<account>.github.io/<repo>/` within a minute or two. If the repo is not named `<account>.github.io`, set `baseurl: "/<repo>"` in `_config.yml`.
-4. To use a custom domain, add it under **Pages > Custom domain**, point the domain's DNS at GitHub Pages as the settings page instructs, and set `url:` in `_config.yml`. Tick **Enforce HTTPS**.
+Every push to `main` builds the site and publishes it. The workflow in `.github/workflows/pages.yml` does the work and turns Pages on the first time it runs.
+
+The site lives at https://brendankinggroup.github.io/Amys-Website/ until a custom domain is connected. To connect one: in the repository settings open **Pages**, enter the domain under **Custom domain**, point the domain's DNS at GitHub Pages as that page instructs, tick **Enforce HTTPS**, and set `url:` in `_config.yml` to the new domain.
 
 ## Taking payments with Stripe
 

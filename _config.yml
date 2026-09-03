@@ -4,8 +4,8 @@
 title: Pilates High
 tagline: Private Pilates on Balanced Body apparatus
 description: Private, one-to-one Pilates on Balanced Body apparatus with Amy King in Las Vegas, in the studio or at your home. Classical foundation, contemporary practice, one client at a time.
-url: ""            # e.g. https://pilateshigh.com once the domain is connected
-baseurl: ""        # leave empty for a custom domain or user site; "/Amys-Website" for a project page
+url: "https://brendankinggroup.github.io"   # change to https://pilateshigh.com once the domain is connected
+baseurl: ""        # set automatically by the deploy workflow; leave empty
 
 location: Las Vegas, Nevada
 email: amy@pilateshigh.com
