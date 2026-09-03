@@ -1,35 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pilates High</title>
-  <meta name="description" content="Private, one-to-one Pilates apparatus training with Amy in Las Vegas. Every session written for one body: yours.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<a class="skip" href="#practice">Skip to content</a>
-
-<header class="nav">
-  <a class="wordmark" href="#top">Pilates <em>High</em></a>
-  <nav aria-label="Sections">
-    <a href="#practice">The practice</a>
-    <a href="#for">Who it's for</a>
-    <a href="#investment">Investment</a>
-    <a href="#amy">Amy</a>
-  </nav>
-  <a class="btn btn-small" href="#book">Book</a>
-</header>
-
-<main id="top">
-
-  <!-- ============ HERO ============ -->
+---
+layout: default
+body_class: home
+---
+<!-- ============ HERO ============ -->
   <section class="hero">
-    <p class="eyebrow">Private Pilates &middot; Las Vegas, Nevada</p>
+    <p class="eyebrow">Private Pilates &middot; {{ site.location }}</p>
     <h1>Pilates, built for one body.<br><em>Yours.</em></h1>
     <p class="lede">One-to-one apparatus training in a private studio. Every session is written for you, adjusted spring by spring, and never taught to a room.</p>
     <div class="hero-actions">
@@ -132,35 +107,45 @@
       <h2>Straightforward rates. No memberships, no contracts.</h2>
       <p class="prose">Every option below is a private, one-to-one session on the full apparatus. The series and monthly options exist because consistency is where the results are.</p>
 
-      <!-- Placeholder rates. Update before launch. -->
+      {%- comment -%}
+        Rates and Stripe links live in _config.yml. Nothing to edit here.
+      {%- endcomment -%}
       <div class="rates">
-        <div class="rate">
-          <h3>Initial assessment</h3>
-          <p class="rate-meta">90 minutes &middot; required for new clients</p>
-          <p class="price"><span class="currency">$</span>175</p>
-          <p class="rate-note">Full movement assessment and your first session, with a written programme to follow.</p>
+        {% for rate in site.rates %}
+        {% assign link = site.stripe[rate.key] %}
+        <div class="rate{% if rate.featured %} rate-featured{% endif %}">
+          <h3>{{ rate.name }}</h3>
+          <p class="rate-meta">{{ rate.meta }}</p>
+          <p class="price"><span class="currency">$</span>{{ rate.price }}{% if rate.per %}<span class="per">{{ rate.per }}</span>{% endif %}</p>
+          <p class="rate-note">{{ rate.note }}</p>
+          {% if link and link != "" %}
+          <a class="btn btn-ghost" href="{{ link }}">Purchase</a>
+          {% else %}
+          <a class="btn btn-ghost" href="mailto:{{ site.email }}?subject={{ rate.name | uri_escape }}">Book by email</a>
+          {% endif %}
         </div>
-        <div class="rate">
-          <h3>Single private session</h3>
-          <p class="rate-meta">55 minutes</p>
-          <p class="price"><span class="currency">$</span>135</p>
-          <p class="rate-note">Booked one at a time. Best for occasional visits or travel schedules.</p>
-        </div>
-        <div class="rate rate-featured">
-          <h3>Series of ten</h3>
-          <p class="rate-meta">10 &times; 55 minutes &middot; valid six months</p>
-          <p class="price"><span class="currency">$</span>1,250</p>
-          <p class="rate-note">The ten sessions Joseph Pilates said it takes to feel the difference. $125 per session.</p>
-        </div>
-        <div class="rate">
-          <h3>Monthly, twice weekly</h3>
-          <p class="rate-meta">8 &times; 55 minutes &middot; a standing time slot</p>
-          <p class="price"><span class="currency">$</span>960<span class="per">/month</span></p>
-          <p class="rate-note">Your slot is held every week. $120 per session, priority rescheduling.</p>
-        </div>
+        {% endfor %}
       </div>
 
-      <p class="fine">Twenty-four hours' notice to reschedule. Sessions cancelled inside that window are charged in full. Gift certificates are available for any option above.</p>
+      <p class="fine">Twenty-four hours' notice to reschedule. Sessions cancelled inside that window are charged in full. {% if site.stripe.gift != "" %}<a href="{{ site.stripe.gift }}">Gift certificates</a> are available for any option above.{% else %}Gift certificates are available for any option above.{% endif %} Payment is handled securely by Stripe. Nothing is stored on this site.</p>
+    </div>
+  </section>
+
+  <!-- ============ JOURNAL ============ -->
+  <section class="section" id="journal">
+    <aside class="rail"><span>Journal</span></aside>
+    <div class="content">
+      <h2>Notes on movement and the long game.</h2>
+      <ul class="post-list post-list-compact">
+        {% for post in site.posts limit: 3 %}
+        <li>
+          <p class="eyebrow"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>{% if post.category %} &middot; {{ post.category }}{% endif %}</p>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 160 }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+      <a class="link-arrow link-arrow-right" href="{{ '/journal/' | relative_url }}">All journal entries</a>
     </div>
   </section>
 
@@ -175,7 +160,7 @@
         <h2>Amy</h2>
         <!-- Bracketed items are placeholders for Amy to confirm. -->
         <p class="prose">Amy is a comprehensively certified Pilates instructor with [twelve] years of teaching and over [600] hours of apparatus training through [certification body]. She teaches one client at a time because that is the only way the method was ever meant to be taught.</p>
-        <p class="prose">Before Pilates she [was a dancer / competed in / worked in], which is where she learned that a body performs best when it is trained with precision rather than punishment. Her post-rehabilitation work is done in coordination with orthopaedic surgeons and physical therapists across the Las Vegas valley.</p>
+        <p class="prose">Before Pilates she [was a dancer / competed in / worked in], which is where she learned that a body performs best when it is trained with precision rather than punishment. Her post-rehabilitation work is done in coordination with orthopaedic surgeons and physical therapists across {{ site.location | split: "," | first }}.</p>
         <ul class="creds">
           <li>Comprehensive apparatus certification, [certification body]</li>
           <li>[Post-rehabilitation / pre- and postnatal specialisation]</li>
@@ -192,7 +177,11 @@
       <h2>Request a consultation.</h2>
       <p class="prose">Tell Amy a little about what brings you. She replies personally, usually within one business day, to arrange your initial assessment.</p>
 
-      <form class="book-form" action="mailto:amy@pilateshigh.com" method="post" enctype="text/plain">
+      {% if site.formspree_id != "" %}
+      <form class="book-form" action="https://formspree.io/f/{{ site.formspree_id }}" method="post">
+      {% else %}
+      <form class="book-form" action="mailto:{{ site.email }}" method="post" enctype="text/plain">
+      {% endif %}
         <label>
           <span>Your name</span>
           <input type="text" name="name" autocomplete="name" required>
@@ -211,20 +200,8 @@
         </label>
         <div class="form-actions wide">
           <button class="btn" type="submit">Send request</button>
-          <p class="fine">Or call <a href="tel:+17025550100">(702) 555-0100</a>. Studio address is shared on booking.</p>
+          <p class="fine">Or call <a href="tel:{{ site.phone_tel }}">{{ site.phone }}</a>. Studio address is shared on booking.</p>
         </div>
       </form>
     </div>
   </section>
-
-</main>
-
-<footer class="footer">
-  <p class="wordmark">Pilates <em>High</em></p>
-  <p>Private Pilates apparatus training &middot; Las Vegas, Nevada</p>
-  <p>&copy; 2026 Pilates High. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>

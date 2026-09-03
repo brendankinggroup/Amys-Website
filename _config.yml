@@ -1,0 +1,69 @@
+# Pilates High — site settings
+# Everything a non-developer should ever need to change lives in this file.
+
+title: Pilates High
+tagline: Private Pilates apparatus training
+description: Private, one-to-one Pilates apparatus training with Amy in Las Vegas. Every session written for one body. Yours.
+url: ""            # e.g. https://pilateshigh.com once the domain is connected
+baseurl: ""        # leave empty for a custom domain or user site; "/Amys-Website" for a project page
+
+location: Las Vegas, Nevada
+email: amy@pilateshigh.com
+phone: (702) 555-0100
+phone_tel: "+17025550100"
+instagram: ""      # full URL, optional
+
+# Booking form. Leave formspree_id empty to fall back to a plain email link.
+# Formspree's free tier is 50 submissions a month, which is plenty for a private studio.
+formspree_id: ""
+
+# Stripe Payment Links.
+# In the Stripe dashboard: Products > add each option below > "Create payment link".
+# Paste each link here. No code, no server, no monthly fee.
+# While a link is empty the button reads "Book by email" and opens the email address above.
+stripe:
+  assessment: ""
+  single: ""
+  series: ""
+  monthly: ""
+  gift: ""
+
+rates:
+  - key: assessment
+    name: Initial assessment
+    meta: 90 minutes &middot; required for new clients
+    price: "175"
+    note: Full movement assessment and your first session, with a written programme to follow.
+  - key: single
+    name: Single private session
+    meta: 55 minutes
+    price: "135"
+    note: Booked one at a time. Best for occasional visits or travel schedules.
+  - key: series
+    name: Series of ten
+    meta: 10 &times; 55 minutes &middot; valid six months
+    price: "1,250"
+    note: The ten sessions Joseph Pilates said it takes to feel the difference. $125 per session.
+    featured: true
+  - key: monthly
+    name: Monthly, twice weekly
+    meta: 8 &times; 55 minutes &middot; a standing time slot
+    price: "960"
+    per: /month
+    note: Your slot is held every week. $120 per session, priority rescheduling.
+
+# Blog
+permalink: /journal/:year/:month/:title/
+excerpt_separator: <!--more-->
+
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

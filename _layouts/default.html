@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  {% feed_meta %}
+</head>
+<body class="{{ page.body_class | default: layout.body_class }}">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="wordmark" href="{{ '/' | relative_url }}">Pilates <em>High</em></a>
+  <nav aria-label="Sections">
+    <a href="{{ '/' | relative_url }}#practice">The practice</a>
+    <a href="{{ '/' | relative_url }}#for">Who it's for</a>
+    <a href="{{ '/' | relative_url }}#investment">Investment</a>
+    <a href="{{ '/' | relative_url }}#amy">Amy</a>
+    <a href="{{ '/journal/' | relative_url }}">Journal</a>
+  </nav>
+  <a class="btn btn-small" href="{{ '/' | relative_url }}#book">Book</a>
+</header>
+
+<main id="main">
+{{ content }}
+</main>
+
+<footer class="footer">
+  <p class="wordmark">Pilates <em>High</em></p>
+  <p>{{ site.tagline }} &middot; {{ site.location }}</p>
+  <p class="footer-links">
+    <a href="{{ '/journal/' | relative_url }}">Journal</a>
+    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    {% if site.instagram != "" %}<a href="{{ site.instagram }}">Instagram</a>{% endif %}
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+  </p>
+  <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+</footer>
+
+<script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+</body>
+</html>

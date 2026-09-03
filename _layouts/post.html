@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <p class="eyebrow"><a href="{{ '/journal/' | relative_url }}">Journal</a> &middot; <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>{% if page.category %} &middot; {{ page.category }}{% endif %}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+  </header>
+  <div class="post-body">
+    {{ content }}
+  </div>
+  <footer class="post-footer">
+    <p class="prose">Written by Amy. Questions about anything here are welcome at <a href="mailto:{{ site.email }}">{{ site.email }}</a>, or bring them to your next session.</p>
+    <a class="btn" href="{{ '/' | relative_url }}#book">Request a consultation</a>
+  </footer>
+</article>
