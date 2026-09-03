@@ -25,7 +25,7 @@ Built as a [Jekyll](https://jekyllrb.com) site so it hosts for free on GitHub Pa
 
 ## Publishing on GitHub Pages
 
-Every push to `main` builds the site and publishes it. The workflow in `.github/workflows/pages.yml` does the work and turns Pages on the first time it runs.
+Every push to `main` builds the site and publishes it. The workflow in `.github/workflows/pages.yml` does the work. The repository is public and Pages is set to build from GitHub Actions, both under the repository settings; neither needs touching again.
 
 The site lives at https://brendankinggroup.github.io/Amys-Website/ until a custom domain is connected. To connect one: in the repository settings open **Pages**, enter the domain under **Custom domain**, point the domain's DNS at GitHub Pages as that page instructs, tick **Enforce HTTPS**, and set `url:` in `_config.yml` to the new domain.
 
