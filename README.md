@@ -84,10 +84,14 @@ bundle exec jekyll serve
 
 Then open http://localhost:4000.
 
+## Photography
+
+The site is designed around six photographs, listed with art direction at `/direction/` (an unlisted page). Until they exist, each image slot shows a line drawing of the apparatus over a painted wash of light, and two slots load temporary Unsplash photographs configured under `photos:` in `_config.yml`. Those two were chosen by title, not reviewed, and should be replaced. To use your own, put the files in `assets/img/` and set, for example, `hero: /assets/img/hero.jpg`.
+
 ## Before launch
 
-1. Replace the bracketed placeholders in the Amy section of `index.html`.
+1. Confirm the bracketed facts in the Amy section of `index.html` and `amy.years` in `_config.yml`.
 2. Confirm the rates, email, phone, and location in `_config.yml`.
 3. Paste in the Stripe Payment Links.
-4. Drop a portrait photograph into the `.portrait` block in `index.html`.
+4. Add photographs (see above) and set their paths in `_config.yml`.
 5. Replace or delete the three sample journal entries.

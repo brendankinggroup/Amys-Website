@@ -2,8 +2,8 @@
 # Everything a non-developer should ever need to change lives in this file.
 
 title: Pilates High
-tagline: Private Pilates apparatus training
-description: Private, one-to-one Pilates apparatus training with Amy in Las Vegas. Every session written for one body. Yours.
+tagline: Private Pilates on Balanced Body apparatus
+description: Private, one-to-one Pilates on Balanced Body apparatus with Amy King in Las Vegas. Classical foundation, contemporary practice, one client at a time.
 url: ""            # e.g. https://pilateshigh.com once the domain is connected
 baseurl: ""        # leave empty for a custom domain or user site; "/Amys-Website" for a project page
 
@@ -12,6 +12,19 @@ email: amy@pilateshigh.com
 phone: (702) 555-0100
 phone_tel: "+17025550100"
 instagram: ""      # full URL, optional
+
+amy:
+  years: "[fifteen]"   # years teaching, spelled out. Confirm with Amy.
+
+# Photographs. Each may be a full URL or a path such as /assets/img/hero.jpg.
+# The three below are temporary Unsplash photographs (free to use, no
+# attribution required) chosen by title from search results. They have not
+# been reviewed. Replace them with Amy's own photography before launch.
+# Leave one empty and the site shows the line illustration instead.
+photos:
+  hero: "https://unsplash.com/photos/Lmt68LRP71s/download?w=1600"
+  band: "https://unsplash.com/photos/7UoAoaVVyRE/download?w=2000"
+  portrait: ""
 
 # Booking form. Leave formspree_id empty to fall back to a plain email link.
 # Formspree's free tier is 50 submissions a month, which is plenty for a private studio.
