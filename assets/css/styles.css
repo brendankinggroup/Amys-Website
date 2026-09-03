@@ -4,29 +4,30 @@
    ========================================================== */
 
 :root {
-  /* Ground: warm stone, the colour of raw linen upholstery in morning light.
-     Ink: near-black with a touch of green, like a maple frame in shadow.
-     Accent: eucalyptus. Used once per screen, never for decoration. */
-  --stone:     #EEEAE3;
-  --stone-2:   #E4DFD6;
-  --ink:       #1F211E;
-  --ink-2:     #55594F;
-  --mute:      #8A8C83;
-  --line:      #D2CEC5;
-  --accent:    #5F6E5F;
-  --accent-ink:#EEEAE3;
+  color-scheme: light;
+  /* Ground: cream, like fresh linen in morning light.
+     Ink: warm espresso rather than black, so nothing on the page is harsh.
+     Accent: soft sage. Used once per screen, never for decoration. */
+  --stone:     #F8F4EB;
+  --stone-2:   #F1EADC;
+  --ink:       #2B2724;
+  --ink-2:     #6A6157;
+  --mute:      #9E9384;
+  --line:      #E3DACB;
+  --accent:    #7C8C74;
+  --accent-ink:#F8F4EB;
 
   /* Light studies: the painted washes behind illustrations and photo slots */
-  --light-warm: #F5EEE3;
-  --light-cool: #D9D6CC;
-  --light-deep: #ABAEA3;
+  --light-warm: #FCF8F0;
+  --light-cool: #EFE7D7;
+  --light-deep: #D9CDB6;
 
-  /* Dark band (Investment): moss, with the same accent lifted */
-  --band:      #252C27;
-  --band-ink:  #EEEAE3;
-  --band-2:    #A7ADA4;
-  --band-line: #3C453E;
-  --band-accent: #A3B7A3;
+  /* The pricing band: a deeper cream, like café au lait, with the same espresso ink */
+  --band:      #EFE6D4;
+  --band-ink:  #2B2724;
+  --band-2:    #7A7063;
+  --band-line: #DDD1BC;
+  --band-accent: #6E7F67;
 
   --bg:  var(--stone);
   --fg:  var(--ink);
@@ -41,44 +42,7 @@
   --max: 88rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --stone:   #171917;
-    --stone-2: #202320;
-    --ink:     #E8E5DE;
-    --ink-2:   #B4B7AE;
-    --mute:    #7F837C;
-    --line:    #343833;
-    --accent:  #A3B7A3;
-    --accent-ink: #171917;
-    --light-warm: #3A3E38;
-    --light-cool: #232723;
-    --light-deep: #151815;
-    --band:    #E8E5DE;
-    --band-ink: #171917;
-    --band-2:  #55594F;
-    --band-line: #CFCBC2;
-    --band-accent: #5F6E5F;
-  }
-}
-:root[data-theme="dark"] {
-  --stone:   #171917;
-  --stone-2: #202320;
-  --ink:     #E8E5DE;
-  --ink-2:   #B4B7AE;
-  --mute:    #7F837C;
-  --line:    #343833;
-  --accent:  #A3B7A3;
-  --accent-ink: #171917;
-  --light-warm: #3A3E38;
-  --light-cool: #232723;
-  --light-deep: #151815;
-  --band:    #E8E5DE;
-  --band-ink: #171917;
-  --band-2:  #55594F;
-  --band-line: #CFCBC2;
-  --band-accent: #5F6E5F;
-}
+/* The site commits to one light, cream palette in every viewing mode. */
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -248,13 +212,13 @@ img { max-width: 100%; display: block; }
 .ratecard tbody th, .ratecard tbody td { vertical-align: top; padding: 1.5rem 1.25rem; border-bottom: 1px solid var(--band-line); text-align: left; }
 .ratecard tbody th { padding-left: 0; font-weight: 400; width: 40%; }
 .ratecard tbody td { width: 30%; }
-.ratecard tbody tr.featured { background: color-mix(in srgb, var(--band-accent) 10%, transparent); }
+.ratecard tbody tr.featured { background: color-mix(in srgb, var(--band-accent) 12%, transparent); }
 .ratecard tbody tr.featured th { padding-left: 1rem; border-left: 2px solid var(--band-accent); }
 .rate-name { display: block; font-family: var(--display); font-size: 1.4rem; line-height: 1.2; }
 .rate-flag { display: inline-block; margin-left: .5rem; vertical-align: middle; font-family: var(--sans); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--band-accent); }
 .rate-note { display: block; margin-top: .45rem; font-size: .9rem; color: var(--band-2); max-width: 36ch; }
 .rate-meta { display: block; margin-top: .35rem; }
-.rate-buy { display: inline-block; margin-top: .75rem; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--band-line); padding-bottom: 2px; }
+.rate-buy { display: inline-block; margin-top: .75rem; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--band-2); padding-bottom: 2px; }
 .rate-buy:hover { border-color: var(--band-ink); }
 .price { display: block; font-family: var(--display); font-size: 2.6rem; line-height: 1; font-variant-numeric: tabular-nums lining-nums; }
 .price .currency { font-size: 1.3rem; vertical-align: top; margin-right: .1rem; position: relative; top: .3rem; }

@@ -52,9 +52,4 @@
     paint(c, el.getAttribute('data-light'));
   });
 
-  // repaint on theme change so the wash follows the palette
-  var mq = window.matchMedia('(prefers-color-scheme: dark)');
-  if (mq.addEventListener) mq.addEventListener('change', function () {
-    document.querySelectorAll('.light-canvas').forEach(function (c) { paint(c, c.parentNode.getAttribute('data-light')); });
-  });
 })();
